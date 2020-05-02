@@ -1,2 +1,2 @@
-# AutomateTheBoringStuff
-Repo for Automate the Boring Stuff with Python book's exercises
+# python_learning
+Personal Python Learning repository
