@@ -1,5 +1,5 @@
 #! python3
-""" Configure multiple VLANs batch using a "myswitches.txt" file as switches IP list
+""" python35.py - Configure multiple VLANs batch using a "myswitches.txt" file as switches IP list
 
 Using a list of IPs in the file "myswitches.txt" configures VLANs 2-8 in each switch.
 

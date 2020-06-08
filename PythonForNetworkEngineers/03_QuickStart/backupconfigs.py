@@ -1,5 +1,5 @@
 #! python3
-""" Run a backup batch using a "myswitches.txt" file as IP list
+""" backupconfigs.py - Run a backup batch using a "myswitches.txt" file as IP list
 
 Using a list of IPs in the file "myswitches.txt" creates a backup config
 file "switch192.168.122.##.txt" for each IP listed.

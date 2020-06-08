@@ -1,5 +1,5 @@
 #! python3
-""" Configure multiple VLANs in a switch
+""" python33.py - Configure multiple VLANs in a switch
 
 Using a configured IP (HOST), configures multiple VLAN using a for loop.
 

@@ -1,5 +1,5 @@
 #! python3
-""" Configure multiple VLANs in a switch
+""" python32.py - Configure multiple VLANs in a switch
 
 Using a configured IP (HOST), configures VLANs 2-8.
 

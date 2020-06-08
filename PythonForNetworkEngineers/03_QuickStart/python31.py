@@ -1,5 +1,5 @@
 #! python3
-""" Configure loopback interfaces and OSPF in a switch
+""" python31.py - Configure loopback interfaces and OSPF in a switch
 
 Using a configured IP (HOST), configures 2 loopback interfaces and OSPF.
 
