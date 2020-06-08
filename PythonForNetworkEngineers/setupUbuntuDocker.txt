@@ -1,0 +1,60 @@
+
+
+# This file has the necessary commands to setup the Ubuntu Docker Guest machine to run all codes from
+# this repository (Each step is commented and referenced)
+# To execute just copy the commands and paste to the Ubuntu terminal
+# Basically these steps installs an virtual environment using Python 3.7.5 and the needed modules
+
+# Python 3.7.5
+# napalm
+# netmiko
+# simple-crypt
+#=======================================
+
+# Update apt references and Install pyenv pre-reqs
+apt-get update; apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+
+# Install pyenv (https://github.com/pyenv/pyenv)
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+# Define environment variables
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+
+# Add pyenv init to shell
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+
+# Restart Shell
+exec "$SHELL"
+
+# Install Python build dependencies (https://github.com/pyenv/pyenv/wiki#suggested-build-environment)
+apt-get update; apt-get install --no-install-recommends -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+# Install python 3.7.7
+pyenv install 3.7.5
+
+# Check python version in use
+python --version
+python3 --version
+
+#Check pyenv versions available
+pyenv versions
+
+# Change default python version to 3.7.5
+pyenv global 3.7.5
+
+# Check updated python versions
+python --version
+python3 --version
+
+# Update pip
+pip install --upgrade pip
+
+# Install python libs
+pip install napalm
+pip install netmiko
+pip install simple-crypt
