@@ -1,9 +1,9 @@
 #! python3
-""" python31.py - Configure loopback interfaces and OSPF in a switch
+""" python31.py - Configure loopback interfaces and OSPF in a router
 
 Using a configured IP (HOST), configures 2 loopback interfaces and OSPF.
 
-Connection to the switches done using telnet.
+Connection to the router done using telnet.
 
 Created for David Bombal's Python Network Programming for Network Engineers
 (Python 3) using the shared codes as base.
@@ -18,7 +18,7 @@ __version__ = "0.1a"
 __maintainer__ = "Walter Gadelha"
 __email__ = "wgadelha@gmail.com"
 
-# Host IP of the target switch
+# Host IP of the target router
 HOST = "192.168.122.71"
 
 # Prompt the user for username and password
