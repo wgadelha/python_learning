@@ -1,0 +1,25 @@
+enable
+conf t
+hostname ESW1
+username wgadelha pass cisco
+username wgadelha priv 15
+
+interface vlan 1
+ ip address 192.168.122.72 255.255.255.0
+ no shut
+
+ip domain-name pythoncourse.com
+crypto key generate rsa
+1024
+
+ip ssh version 2
+
+line vty 0 4
+ login local
+ transport input all
+
+ip name-server 1.1.1.1
+ip route 0.0.0.0 0.0.0.0 192.168.122.1
+
+end
+wr

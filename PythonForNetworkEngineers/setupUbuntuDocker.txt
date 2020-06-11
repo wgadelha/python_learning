@@ -58,3 +58,4 @@ pip install --upgrade pip
 pip install napalm
 pip install netmiko
 pip install simple-crypt
+pip install simplejson

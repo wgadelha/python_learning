@@ -1,0 +1,30 @@
+enable
+conf t
+hostname R1
+username wgadelha pass cisco
+username wgadelha priv 15
+
+interface Gi0/0
+ ip address 192.168.122.71 255.255.255.0
+ no shut
+
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+
+interface Loopback1
+ ip address 2.2.2.2 255.255.255.255
+
+router ospf 1
+ network 0.0.0.0 255.255.255.255 area 0
+
+ip domain-name pythoncourse.com
+crypto key generate rsa
+1024
+
+ip ssh version 2
+
+line vty 0 4
+ login local
+ transport input all
+end
+wr
