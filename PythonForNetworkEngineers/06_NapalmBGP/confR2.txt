@@ -1,0 +1,37 @@
+enable
+conf t
+hostname R2
+username wgadelha pass cisco
+username wgadelha priv 15
+
+ip domain-name pythoncourse.com
+crypto key generate rsa
+1024
+
+ip ssh version 2
+
+line vty 0 4
+ login local
+ transport input all
+
+interface Gi0/0
+ ip address 8.8.8.1 255.255.255.252
+ no shut
+
+interface Gi0/1
+ ip address 17.1.1.2 255.255.255.0
+ no shut
+
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+
+router bgp 65001
+ neighbor 17.1.1.1 remote-as 65001
+ neighbor 8.8.8.2 remote-as 65002
+ neighbor 8.8.8.2 default-originate
+ network 2.2.2.2 mask 255.255.255.255
+ network 17.1.1.0 mask 255.255.255.0
+ network 8.8.8.0 mask 255.255.255.252
+ 
+end
+wr
